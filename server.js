@@ -8,13 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('CORE backend is live!');
-});
-
-app.post('/', (req, res) => {
-  const userMessage = req.body.message || '';
-  const reply = `You said: ${userMessage}`;
-  res.json({ reply });
+  res.send('CORE Backend is running!');
 });
 
 app.listen(PORT, () => {
