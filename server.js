@@ -2,13 +2,19 @@ import express from 'express';
 import cors from 'cors';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('CORE Backend is running!');
+  res.send('CORE backend is live!');
+});
+
+app.post('/', (req, res) => {
+  const userMessage = req.body.message || '';
+  const reply = `You said: ${userMessage}`;
+  res.json({ reply });
 });
 
 app.listen(PORT, () => {
